@@ -1,0 +1,44 @@
+---
+import Main from "../layouts/Main.astro";
+
+const profilePicture = 'https://i.imgur.com/LBctSQd.gif';
+---
+
+<Main>
+	<section class="profile">
+		<img class="profile__picture" src={profilePicture} alt="Groot Dance">
+		<div class="profile__details">
+			<h1>Daniel Cueto</h1>
+			<h2>Software Engineer @ anywhere</h2>
+			<p>
+				Aiming on building excellent, detailed and scalable software solutions
+			</p>
+		</div>
+	</section>
+</Main>
+
+
+<style>
+	.profile {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 1rem 0 3rem 0;
+	}
+
+	.profile__details {
+		flex: 1 0 300px;
+	}
+
+	.profile__details > h1 {
+		margin-top: 0;
+	}
+
+	.profile__picture {
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 50%;
+		margin: 0 2rem 1rem 0;
+	}
+</style>
