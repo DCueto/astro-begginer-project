@@ -1,8 +1,9 @@
 ---
-layout: ../layouts/Main.astro
+layout: ../layouts/Blog.astro
+title: "My Guiding Philosophies"
+subtitle: "These are the philosophies that guide every decision and action I make."
+poster: "images/philosophy-books.jpg"
 ---
-
-# Philosophies
 
 - Be present and enojoy now
 - Be driven by values

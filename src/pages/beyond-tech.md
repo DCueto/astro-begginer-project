@@ -1,8 +1,9 @@
 ---
-layout: ../layouts/Main.astro
+layout: ../layouts/Blog.astro
+title: "Beyond Technology"
+subtitle: "Humans are multi-faceted. Beyond tech, I indulge in the following:"
+poster: "images/landscape-tree.jpg"
 ---
-
-# Beyond Technology
 
 - 5X Marathoner
 - Olympic gold medalist
