@@ -24,6 +24,18 @@ const cards = [
 		to: "/beyond-tech"
 	},
 ];
+
+type BlogFrontmatterData = {
+	poster: string;
+	title: string;
+	subtitle: string
+}
+
+const blogs = await Astro.glob<BlogFrontmatterData>("../pages/blogs/*.md");
+
+// prints blogs data into node console
+console.log(blogs);
+
 ---
 
 <Main title="Daniel Cueto">
@@ -47,18 +59,14 @@ const cards = [
 		</p>
 	</div>
 
-	<ol class="blogs">
-		<li class="blogs__list">
-			<a href="blogs/typescript-new-javascript" class="blog__link">Typescript is the new Javascript</a>
-		</li>
-
-		<li class="blogs__list">
-			<a href="/blogs/rust-javascript-tooling" class="blog__link">Why Rust is the future of Javascript tooling</a>
-		</li>
-
-		<li class="blogs__list">
-			<a href="/blogs/sleep-more" class="blog__link">Why you should sleep more</a>
-		</li>
+	<ol class="blogs" data-blogs={ JSON.stringify(blogs) }>
+		{
+			blogs.map( blog => (
+				<li class="blogs__list">
+					<a href={ blog.url } class="blog__link">{ blog.frontmatter.title }</a>
+				</li>
+			))
+		}
 	</ol>
 
 </Main>
@@ -129,5 +137,11 @@ const cards = [
 
 
 <script>
-	console.log('Hello World!');
+	console.log("hola mundo");
+
+	// print blogs data into browser console
+	const blogsEl = document.querySelector('.blogs');
+	if( blogsEl instanceof HTMLElement ){
+		console.log( JSON.parse(blogsEl.dataset.blogs as string) );
+	}
 </script>
