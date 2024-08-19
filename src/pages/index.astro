@@ -39,7 +39,30 @@ const cards = [
 	</section>
 
 	<Cards cards={ cards } />
+
+	<div class="featured-blogs">
+		<h3 class="featured-blogs__title">Featured Blogs</h3>
+		<p class="featured-blogs__description">
+			Opinion pieces that wil change everything you know about web development.
+		</p>
+	</div>
+
+	<ol class="blogs">
+		<li class="blogs__list">
+			<a href="blogs/typescript-new-javascript" class="blog__link">Typescript is the new Javascript</a>
+		</li>
+
+		<li class="blogs__list">
+			<a href="/blogs/rust-javascript-tooling" class="blog__link">Why Rust is the future of Javascript tooling</a>
+		</li>
+
+		<li class="blogs__list">
+			<a href="/blogs/sleep-more" class="blog__link">Why you should sleep more</a>
+		</li>
+	</ol>
+
 </Main>
+
 
 <style>
 	.profile {
@@ -63,6 +86,44 @@ const cards = [
 		object-fit: cover;
 		border-radius: 50%;
 		margin: 0 2rem 1rem 0;
+	}
+
+	.featured-blogs {
+		margin: 0;
+		padding: 3rem 0 0 0;
+	}
+
+	.featured-blogs__title {
+		font-size: 2rem;
+		color: var(--grey-900);
+	}
+
+	.featured-blogs__description {
+		margin-top: -1.2rem;
+	}
+
+	.blogs {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	.blogs__list {
+		border-bottom: 1px solid;
+		border-color: var(--grey-200);
+	}
+
+	.blog__link {
+		opacity: 1;
+		height: 100%;
+		display: block;
+		padding: 1rem 0;
+		color: var(--grey-200);
+		text-decoration: none;
+		transition: opacity	.2s ease-in-out;
+	}
+
+	.blog__link:hover {
+		opacity: .7;
 	}
 </style>
 

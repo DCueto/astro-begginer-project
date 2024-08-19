@@ -9,7 +9,7 @@ export type Props = {
 const { title, to, gradientFrom, gradientTo } = Astro.props;
 ---
 
-<a href={to} class="card">
+<a href={to} class="card" data-gradientfrom={gradientFrom}>
   <div class="card__inner">
     <p class="card__title">{ title }</p>
     <div class="card__footer">&rarr;</div>
@@ -61,3 +61,13 @@ const { title, to, gradientFrom, gradientTo } = Astro.props;
   }
 
 </style>
+
+
+<script>
+  const card = document.querySelector('.card');
+
+  if (card instanceof HTMLElement) {
+    // access data in dataset attribute
+    console.log(card.dataset.gradientfrom);
+  }
+</script>
